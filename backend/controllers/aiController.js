@@ -26,9 +26,9 @@ const analyzeComplaint = async (req, res) => {
     const response = await axios.post(
       'https://openrouter.ai/api/v1/chat/completions',
       {
-        model: 'google/gemini-2.5-pro',
+        model: 'openai/gpt-3.5-turbo',
         messages: [{ role: 'user', content: prompt }],
-        response_format: { type: "json_object" }
+        max_tokens: 300
       },
       {
         headers: {
