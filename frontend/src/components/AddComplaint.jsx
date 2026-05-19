@@ -38,7 +38,7 @@ const AddComplaint = () => {
     
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      const { data } = await axios.post('http://localhost:5000/api/ai/analyze', {
+      const { data } = await axios.post('https://end-sem-backend-e8cx.onrender.com/api/ai/analyze', {
         title: formData.title,
         description: formData.description,
         category: formData.category
@@ -67,7 +67,7 @@ const AddComplaint = () => {
         aiDepartment: aiAnalysis?.department
       };
       
-      await axios.post('http://localhost:5000/api/complaints', payload, config);
+      await axios.post('https://end-sem-backend-e8cx.onrender.com/api/complaints', payload, config);
       navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to submit complaint');

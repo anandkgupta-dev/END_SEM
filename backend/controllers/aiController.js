@@ -33,7 +33,7 @@ const analyzeComplaint = async (req, res) => {
       {
         headers: {
           'Authorization': `Bearer ${process.env.OPENROUTER_API_KEY}`,
-          'HTTP-Referer': 'http://localhost:5000', // Optional
+          'HTTP-Referer': 'https://end-sem-backend-e8cx.onrender.com', // Optional
           'Content-Type': 'application/json'
         }
       }

@@ -14,11 +14,11 @@ const Dashboard = () => {
       const config = {
         headers: { Authorization: `Bearer ${user.token}` }
       };
-      let url = 'http://localhost:5000/api/complaints';
+      let url = 'https://end-sem-backend-e8cx.onrender.com/api/complaints';
       if (locationSearch) {
-        url = `http://localhost:5000/api/complaints/search?location=${locationSearch}`;
+        url = `https://end-sem-backend-e8cx.onrender.com/api/complaints/search?location=${locationSearch}`;
       } else if (categoryFilter) {
-        url = `http://localhost:5000/api/complaints?category=${categoryFilter}`;
+        url = `https://end-sem-backend-e8cx.onrender.com/api/complaints?category=${categoryFilter}`;
       }
       
       const { data } = await axios.get(url, config);
@@ -37,7 +37,7 @@ const Dashboard = () => {
       const config = {
         headers: { Authorization: `Bearer ${user.token}` }
       };
-      await axios.put(`http://localhost:5000/api/complaints/${id}`, { status: newStatus }, config);
+      await axios.put(`https://end-sem-backend-e8cx.onrender.com/api/complaints/${id}`, { status: newStatus }, config);
       fetchComplaints();
     } catch (error) {
       console.error('Error updating status:', error);
